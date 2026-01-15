@@ -66,6 +66,9 @@ local M = {
 
         -- prevents unzoom tmux when navigating beyond vim border
         persist_zoom = false,
+
+				-- auto zooms the next pane, NOTE: don't use with `presist_zoom = true`.
+				auto_zoom = true,
     },
     resize = {
         -- enables default keybindings (A-hjkl) for normal mode
