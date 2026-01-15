@@ -20,7 +20,7 @@ function M.to(direction)
     local has_tmux_target =
         layout.has_tmux_target(direction, options.navigation.persist_zoom, options.navigation.cycle_navigation)
     if (nvim.is_nvim_float() or is_nvim_border) and has_tmux_target then
-        tmux.change_pane(direction)
+        tmux.change_pane(direction, options.navigation.auto_zoom)
     elseif vim.fn.getcmdwintype() == "" then -- if not in command mode
         if is_nvim_border and options.navigation.cycle_navigation then
             nvim.wincmd(nvim.opposite_direction(direction), 999)
