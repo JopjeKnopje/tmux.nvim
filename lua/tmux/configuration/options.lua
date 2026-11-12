@@ -61,6 +61,9 @@ local M = {
         -- cycles to opposite pane while navigating into the border
         cycle_navigation = true,
 
+        -- auto zooms the next pane, don't use with `presist_zoom = true`.
+        auto_zoom = true,
+
         -- enables default keybindings (C-hjkl) for normal mode
         enable_default_keybindings = false,
 

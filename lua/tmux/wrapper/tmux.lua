@@ -53,13 +53,13 @@ function M.setup()
 end
 
 function M.change_pane(direction, auto_zoom)
-	local is_zoomed = M.is_zoomed()
+    local is_zoomed = M.is_zoomed()
 
-	M.execute(string.format("select-pane -t '%s' -%s", get_tmux_pane(), tmux_directions[direction]))
-	if auto_zoom and is_zoomed then
-		M.execute("resize-pane -Z")
-	end
-	vim.o.laststatus = vim.o.laststatus -- reset statusline as it sometimes disappear (#105)
+    M.execute(string.format("select-pane -t '%s' -%s", get_tmux_pane(), tmux_directions[direction]))
+    if auto_zoom and is_zoomed then
+        M.execute("resize-pane -Z")
+    end
+    vim.o.laststatus = vim.o.laststatus -- reset statusline as it sometimes disappear (#105)
 end
 
 function M.window_index()
